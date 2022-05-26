@@ -1,0 +1,16 @@
+{
+  "name": "jenkinstest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "add.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^4.1.0",
+    "jest": "^28.1.0"
+  }
+}
