@@ -18,6 +18,13 @@ pipeline {
       steps {
         sh 'npm test'
       }
+
+      post {
+        success {
+          echo "Archiving the project"
+          archiveArtifacts artifacts: 'src/*'
+        }
+      }
     }
 
     stage('Deploy') {
