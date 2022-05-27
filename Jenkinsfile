@@ -4,7 +4,7 @@ pipeline {
     stage('Init') {
       steps {
         echo "Installing"
-        npm install
+        sh 'npm install'
       }
     }
 
@@ -16,7 +16,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        npm test
+        sh 'npm test'
       }
     }
 
