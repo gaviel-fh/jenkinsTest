@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('Init') {
       steps {
+        echo "Installing"
         npm install
       }
     }
