@@ -32,7 +32,7 @@ pipeline {
     stage('Deploy for Staging') {
       steps {
         echo 'Deploying in Staging Area'
-        sh 'echo New Deployment [$(date +'%d-%m-%Y %H:%M:%S')] >> deployments.txt'
+        sh 'echo New Deployment [$(date +"%d-%m-%Y %H:%M:%S")] >> deployments.txt'
       }
     }
 
