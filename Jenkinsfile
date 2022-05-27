@@ -32,17 +32,18 @@ pipeline {
     stage('Deploy for Staging') {
       steps {
         echo 'Deploying in Staging Area'
+        sh 'echo New Deployment [$(date +'%d-%m-%Y %H:%M:%S')] >> deployments.txt'
       }
     }
 
-    stage('Deploy for Production') {
-      steps {
-        timeout(time: 5, unit: 'DAYS') {
-          input message: 'Approve PRODUCTION Deployment?'
-        }
+    // stage('Deploy for Production') {
+    //   steps {
+    //     timeout(time: 5, unit: 'DAYS') {
+    //       input message: 'Approve PRODUCTION Deployment?'
+    //     }
 
-        echo 'Deploying in Staging Area'
-      }
-    }
+    //     echo 'Deploying in Staging Area'
+    //   }
+    // }
   }
 }
