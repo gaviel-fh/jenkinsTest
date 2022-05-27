@@ -27,8 +27,18 @@ pipeline {
       }
     }
 
-    stage('Deploy') {
+    stage('Deploy for Staging') {
       steps {
+        echo 'Deploying in Staging Area'
+      }
+    }
+
+    stage('Deploy for Production') {
+      steps {
+        timeout(time: 5, unit: 'DAYS') {
+          input message: 'Approve PRODUCTION Deployment?'
+        }
+
         echo 'Deploying in Staging Area'
       }
     }
