@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('Init') {
       steps {
+        currentBuild.description = "Building on ${env.NODE_NAME}"
         echo "Installing"
         sh 'npm install'
       }
