@@ -1,5 +1,6 @@
 pipeline {
   agent {label 'Linux'}
+  tools {nodejs "nodejs"}
   stages {
     stage('Init') {
       steps {
