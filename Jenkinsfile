@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent Linux
   stages {
     stage('Init') {
       steps {
