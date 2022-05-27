@@ -3,14 +3,19 @@ pipeline {
   stages {
     stage('Init') {
       steps {
-        echo 'Hi, this is David Raese'
-        echo 'We are starting the testing...'
+        npm install
       }
     }
 
     stage('Build') {
       steps {
         echo 'Building the node Project'
+      }
+    }
+
+    stage('Test') {
+      steps {
+        npm test
       }
     }
 
