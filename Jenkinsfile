@@ -39,7 +39,7 @@ pipeline {
     stage('Deploy via Docker on remote server') {
       steps {
         echo 'Deploying remote via docker'
-        sh 'ssh.exe root@134.122.76.203 docker run hello-world'
+        sh 'ssh root@134.122.76.203 docker run hello-world'
       }
     }
 
