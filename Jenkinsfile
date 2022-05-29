@@ -45,7 +45,7 @@ pipeline {
         // }
         script {
           dockerComposeUp = 'docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build -d'
-          pathToproject = '/root/app/jenkinsTest'
+          pathToProject = '/root/app/jenkinsTest'
         }
 
         sshagent(credentials: ['ssh_key_server1']) {
