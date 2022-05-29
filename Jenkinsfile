@@ -43,7 +43,7 @@ pipeline {
         // timeout(time: 5, unit: 'DAYS') {
         //   input message: 'Approve PRODUCTION Deployment?'
         // }
-        scipt {
+        script {
           def dockerComposeUp = 'docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build -d'
           def pathToproject = '/root/app/jenkinsTest'
         }
