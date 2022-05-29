@@ -1,6 +1,3 @@
-def dockerRun = 'docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build -d'
-def projectName = 'jenkinsTest'
-
 pipeline {
   agent any
   // agent {label 'Linux'}
@@ -46,9 +43,13 @@ pipeline {
         // timeout(time: 5, unit: 'DAYS') {
         //   input message: 'Approve PRODUCTION Deployment?'
         // }
+        scipt {
+          def dockerComposeUp = 'docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build -d'
+          def pathToproject = '/root/app/jenkinsTest'
+        }
 
         sshagent(credentials: ['ssh_key_server1']) {
-          sh "ssh -o StrictHostKeyChecking=no root@134.122.76.203 'cd /root/app/${projectName}; git pull; ${dockerRun}'"
+          sh "ssh -o StrictHostKeyChecking=no root@134.122.76.203 'cd ${pathToProject}; git pull; ${dockerComposeUp}'"
         }
       }
     }
