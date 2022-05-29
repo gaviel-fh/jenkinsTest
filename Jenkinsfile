@@ -1,4 +1,4 @@
-def dockerRun = 'docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build'
+def dockerRun = 'docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build -d'
 def projectName = 'jenkinsTest'
 
 pipeline {
@@ -48,7 +48,7 @@ pipeline {
         // }
 
         sshagent(credentials: ['ssh_key_server1']) {
-          sh "ssh -o StrictHostKeyChecking=no root@134.122.76.203 cd /root/app/${projectName}; git pull; ${dockerRun}"
+          sh "ssh -o StrictHostKeyChecking=no 'root@134.122.76.203 cd /root/app/${projectName}; git pull; ${dockerRun}'"
         }
       }
     }
