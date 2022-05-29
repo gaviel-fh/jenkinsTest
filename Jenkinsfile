@@ -44,8 +44,8 @@ pipeline {
         //   input message: 'Approve PRODUCTION Deployment?'
         // }
         script {
-          def dockerComposeUp = 'docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build -d'
-          def pathToproject = '/root/app/jenkinsTest'
+          dockerComposeUp = 'docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build -d'
+          pathToproject = '/root/app/jenkinsTest'
         }
 
         sshagent(credentials: ['ssh_key_server1']) {
