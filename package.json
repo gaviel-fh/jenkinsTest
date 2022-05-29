@@ -2,14 +2,18 @@
   "name": "jenkinstest",
   "version": "1.0.0",
   "description": "",
-  "main": "add.js",
+  "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "start": "node index.js",
+    "dev": "nodemon -L index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
   "devDependencies": {
-    "jest": "^28.1.0"
+    "nodemon": "^2.0.7"
   }
 }
